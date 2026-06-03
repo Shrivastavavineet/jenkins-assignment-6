@@ -1,0 +1,10 @@
+---
+- name: Deploy and Configure MySQL Server
+  hosts: mysql_servers
+  become: true
+  tasks:
+    - name: Ensure MySQL packages are installed
+      apt:
+        name: mysql-server
+        state: present
+        update_cache: true
